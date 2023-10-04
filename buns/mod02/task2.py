@@ -1,4 +1,4 @@
-a = int(input())
+a = float(input())
 
 
 def get_format(x: float) -> str:
@@ -39,3 +39,4 @@ diagonal = a * (2 ** 0.5)
 
 print(get_format(perimeter), get_format(square),
       get_format(diagonal), sep=', ')
+
