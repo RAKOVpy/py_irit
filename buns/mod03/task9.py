@@ -1,5 +1,4 @@
-f = open('input9.txt')
-N = int(f.readline())
+N = int(open('input9.txt').readline())
 len_ans, i = 0, 0
 ans = [0, 0]
 while True:
