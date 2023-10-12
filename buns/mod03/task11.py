@@ -1,7 +1,7 @@
 def get_ans(m: list) -> str:
     def check_horizont(x: list):
         for i in range(n):
-            if len(set(x[i])) == 1:
+            if len(set(x[i])) == 1 and x[i][0] != '_':
                 return x[i][0]
 
     n = len(m[0])
@@ -16,13 +16,13 @@ def get_ans(m: list) -> str:
             flag[0] = False
         if m[i][-i - 1] != m[0][-1]:
             flag[1] = False
-    if flag[0]:
+    if flag[0] and m[0][0] != '_':
         return m[0][0]
-    if flag[1]:
+    if flag[1] and m[0][-1] != '_':
         return m[0][-1]
     return 'Ничья'
 
 
-game = [[i for i in input()]]
-game += [[i for i in input()] for i in range(len(game[0]) - 1)]
+game = [[i for i in input() if i != ' ']]
+game += [[i for i in input() if i != ' '] for i in range(len(game[0]) - 1)]
 print(get_ans(game))
